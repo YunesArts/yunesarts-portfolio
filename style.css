@@ -1,0 +1,458 @@
+/* ===== BASIC RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-menu > a,
+.dropdown > a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.nav-menu > a:hover,
+.dropdown > a:hover {
+    color: #666;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ===== MAIN CONTENT (Homepage) ===== */
+main {
+    max-width: 800px;
+    margin: 150px auto 80px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* ===== HERO IMAGE (Homepage) ===== */
+.hero-image {
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 0 40px;
+}
+
+.hero-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #999;
+    letter-spacing: 3px;
+}
+
+/* ===== CATEGORY ROW (Homepage) ===== */
+.category-row {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.category-card-small {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.category-image-small {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.placeholder-small {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #999;
+    letter-spacing: 2px;
+    transition: transform 0.4s ease;
+}
+
+.category-card-small:hover .placeholder-small {
+    transform: scale(1.05);
+}
+
+.category-card-small h3 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* ===== PAGE HEADER (Subpages) ===== */
+.page-header {
+    max-width: 800px;
+    margin: 150px auto 80px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.page-header h1 {
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* ===== CATEGORY GRID VERTICAL (3D Modeling Page) ===== */
+.category-grid-vertical {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.category-large-vertical {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.category-image-large-vertical {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-image-large-vertical .placeholder-large {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e8e8e8 0%, #d8d8d8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+}
+
+.category-large-vertical:hover .placeholder-large {
+    transform: scale(1.05);
+}
+
+.category-image-large-vertical h2 {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #666;
+    z-index: 10;
+}
+
+
+/* ===== ABOUT PAGE ===== */
+.about-page {
+    max-width: 900px;
+    margin: 150px auto 80px;
+    padding: 0 40px;
+}
+
+.about-page h1 {
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 60px 0 30px;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-group {
+    padding: 20px;
+    background: #f9f9f9;
+    border-left: 3px solid #e0e0e0;
+}
+
+.skill-group h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.skill-group p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ===== CONTACT PAGE ===== */
+.contact-page {
+    max-width: 800px;
+    margin: 150px auto 80px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.contact-page h1 {
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.contact-content > p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-item {
+    padding: 30px;
+    background: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s;
+    text-align: left;
+}
+
+.contact-item:hover {
+    background: #f0f0f0;
+}
+
+.contact-item h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.contact-item p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+
+/* ===== GALLERY GRID (Individual Projects) ===== */
+.gallery-grid {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 40px;
+}
+
+.gallery-item {
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.placeholder-gallery {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #999;
+    letter-spacing: 2px;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .placeholder-gallery {
+    transform: scale(1.08);
+}
+
+.gallery-item h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.gallery-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* ===== GALLERY VERTICAL (for Animation pages) ===== */
+.gallery-grid-vertical {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.gallery-item-vertical {
+    display: block;
+}
+
+.gallery-image-vertical {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.gallery-item-vertical h3 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.gallery-item-vertical p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
