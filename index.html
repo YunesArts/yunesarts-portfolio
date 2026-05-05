@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yunes Arts - 3D Artist & Game Designer</title>
+    <title>Yunes Arts - Game Artist & Illustrator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <!-- Logo/Profilbild links -->
             <a href="index.html" class="logo">
-                <!-- Später fügst du hier dein Profilbild ein -->
                 <span>Yunes Arts</span>
             </a>
             
-            <!-- Menü rechts -->
             <div class="nav-menu">
-                <!-- 3D Modeling Dropdown -->
                 <div class="dropdown">
                     <a href="3d-modeling.html">3D Modeling</a>
                     <div class="dropdown-content">
@@ -27,7 +24,6 @@
                     </div>
                 </div>
                 
-                <!-- Illustration Dropdown -->
                 <div class="dropdown">
                     <a href="illustration.html">Illustration</a>
                     <div class="dropdown-content">
@@ -35,17 +31,15 @@
                         <a href="character-design.html">Character Design</a>
                     </div>
                 </div>
-
-                <!-- Animation -->
+                
                 <a href="animation.html">Animation</a>
                 
-                <!-- Projects Dropdown -->
                 <div class="dropdown">
                     <a href="projects.html">Projects</a>
                     <div class="dropdown-content">
-                        <a href="project-radio.html">Vintage Radio</a>
-                        <a href="project-bistro.html">Space Bistro</a>
-                        <!-- Mehr Projekte später -->
+                        <a href="project-1.html">Project 1</a>
+                        <a href="project-2.html">Project 2</a>
+                        <a href="project-3.html">Project 3</a>
                     </div>
                 </div>
                 
@@ -55,51 +49,83 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-<main>
-    <p class="subtitle">Game Artist & Illustrator</p>
-    <h1>Yunes Arts</h1>
-</main>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-<!-- Hero Image -->
-<section class="hero-image">
-    <div class="hero-placeholder">
-        <span>FEATURED WORK</span>
-    </div>
-</section>
+    <!-- Main Hero Section -->
+    <main>
+        <p class="subtitle">Game Artist & Illustrator</p>
+        <h1>Yunes Arts</h1>
+    </main>
 
-<!-- Welcome Text -->
-<section class="welcome-text">
-    <h2>Welcome to my portfolio!</h2>
-    <p>
-        I am a passionate game artist specializing in 3D art, character design, and concept art. 
-        Explore my work and feel free to reach out for collaborations or inquiries.
-    </p>
-</section>
-
-<!-- Category Row -->
-<section class="category-row">
-    <a href="3d-modeling.html" class="category-card-small">
-        <div class="category-image-small">
-            <div class="placeholder-small">3D MODELING</div>
+    <!-- Featured Work Image -->
+    <section class="hero-image">
+        <div class="hero-placeholder">
+            <span>FEATURED WORK</span>
         </div>
-        <h3>3D Modeling</h3>
-    </a>
+    </section>
 
-    <a href="illustration.html" class="category-card-small">
-        <div class="category-image-small">
-            <div class="placeholder-small">ILLUSTRATION</div>
-        </div>
-        <h3>Illustration</h3>
-    </a>
+    <!-- Welcome Text -->
+    <section class="welcome-text">
+        <h2>Welcome to my portfolio!</h2>
+        <p>
+            I am a passionate game artist specializing in 3D art, character design, and concept art. 
+            Explore my work and feel free to reach out for collaborations or inquiries.
+        </p>
+    </section>
 
-    <a href="animation.html" class="category-card-small">
-        <div class="category-image-small">
-            <div class="placeholder-small">ANIMATION</div>
-        </div>
-        <h3>Animation</h3>
-    </a>
-</section>
+    <!-- Category Cards -->
+    <section class="category-row">
+        <a href="3d-modeling.html" class="category-card-small">
+            <div class="category-image-small">
+                <div class="placeholder-small">3D MODELING</div>
+            </div>
+            <h3>3D Modeling</h3>
+        </a>
+
+        <a href="illustration.html" class="category-card-small">
+            <div class="category-image-small">
+                <div class="placeholder-small">ILLUSTRATION</div>
+            </div>
+            <h3>Illustration</h3>
+        </a>
+
+        <a href="animation.html" class="category-card-small">
+            <div class="category-image-small">
+                <div class="placeholder-small">ANIMATION</div>
+            </div>
+            <h3>Animation</h3>
+        </a>
+
+        <a href="projects.html" class="category-card-small">
+            <div class="category-image-small">
+                <div class="placeholder-small">PROJECTS</div>
+            </div>
+            <h3>Projects</h3>
+        </a>
+    </section>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>

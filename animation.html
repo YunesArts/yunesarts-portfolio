@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -48,28 +49,71 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Page Header -->
     <section class="page-header">
         <h1>Animation</h1>
         <p>Character animations, motion graphics, and animated sequences</p>
     </section>
 
-    <section class="category-grid-vertical">
-        <a href="3d-animation.html" class="category-large-vertical">
-            <div class="category-image-large-vertical">
-                <div class="placeholder-large">
-                    <h2>3D ANIMATION</h2>
-                </div>
+    <!-- Gallery Grid -->
+    <section class="gallery-grid">
+        <article class="gallery-item">
+            <div class="gallery-image">
+                <div class="placeholder-gallery">ANIMATION 1</div>
             </div>
-        </a>
+            <h3>Animation Title</h3>
+            <p>Brief description • Tools used</p>
+        </article>
 
-        <a href="2d-animation.html" class="category-large-vertical">
-            <div class="category-image-large-vertical">
-                <div class="placeholder-large">
-                    <h2>2D ANIMATION</h2>
-                </div>
+        <article class="gallery-item">
+            <div class="gallery-image">
+                <div class="placeholder-gallery">ANIMATION 2</div>
             </div>
-        </a>
+            <h3>Animation Title</h3>
+            <p>Brief description • Tools used</p>
+        </article>
+
+        <article class="gallery-item">
+            <div class="gallery-image">
+                <div class="placeholder-gallery">ANIMATION 3</div>
+            </div>
+            <h3>Animation Title</h3>
+            <p>Brief description • Tools used</p>
+        </article>
+
+        <article class="gallery-item">
+            <div class="gallery-image">
+                <div class="placeholder-gallery">ANIMATION 4</div>
+            </div>
+            <h3>Animation Title</h3>
+            <p>Brief description • Tools used</p>
+        </article>
     </section>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>

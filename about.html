@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -32,7 +33,7 @@
                 </div>
                 
                 <a href="animation.html">Animation</a>
-
+                
                 <div class="dropdown">
                     <a href="projects.html">Projects</a>
                     <div class="dropdown-content">
@@ -48,6 +49,14 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- About Content -->
     <section class="about-page">
         <h1>About</h1>
         
@@ -61,7 +70,7 @@
             <div class="skills-list">
                 <div class="skill-group">
                     <h3>3D Modeling</h3>
-                    <p>Blender and 3ds Max, Highpoly/Lowpoly workflow, UV Mapping, Retopology</p>
+                    <p>3ds Max, Highpoly/Lowpoly workflow, UV Mapping, Retopology</p>
                 </div>
                 
                 <div class="skill-group">
@@ -81,6 +90,24 @@
             </div>
         </div>
     </section>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>

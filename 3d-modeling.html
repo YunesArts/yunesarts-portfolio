@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -32,12 +33,13 @@
                 </div>
                 
                 <a href="animation.html">Animation</a>
-
+                
                 <div class="dropdown">
                     <a href="projects.html">Projects</a>
                     <div class="dropdown-content">
-                        <a href="project-radio.html">Vintage Radio</a>
-                        <a href="project-bistro.html">Space Bistro</a>
+                        <a href="project-1.html">Project 1</a>
+                        <a href="project-2.html">Project 2</a>
+                        <a href="project-3.html">Project 3</a>
                     </div>
                 </div>
                 
@@ -47,38 +49,63 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <!-- Page Header -->
     <section class="page-header">
         <h1>3D Modeling</h1>
         <p>Game-ready assets created with 3ds Max, Substance Painter, and Unity</p>
     </section>
 
- <!-- Category Grid -->
-<section class="category-grid-vertical">
-    <a href="3d-characters.html" class="category-large-vertical">
-        <div class="category-image-large-vertical">
-            <div class="placeholder-large">
-                <h2>CHARACTERS</h2>
+    <!-- Category Grid -->
+    <section class="category-grid-vertical">
+        <a href="3d-characters.html" class="category-large-vertical">
+            <div class="category-image-large-vertical">
+                <div class="placeholder-large">
+                    <h2>CHARACTERS</h2>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    <a href="3d-props.html" class="category-large-vertical">
-        <div class="category-image-large-vertical">
-            <div class="placeholder-large">
-                <h2>PROPS</h2>
+        <a href="3d-props.html" class="category-large-vertical">
+            <div class="category-image-large-vertical">
+                <div class="placeholder-large">
+                    <h2>PROPS</h2>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    <a href="3d-environment.html" class="category-large-vertical">
-        <div class="category-image-large-vertical">
-            <div class="placeholder-large">
-                <h2>ENVIRONMENT</h2>
+        <a href="3d-environment.html" class="category-large-vertical">
+            <div class="category-image-large-vertical">
+                <div class="placeholder-large">
+                    <h2>ENVIRONMENT</h2>
+                </div>
             </div>
-        </div>
-    </a>
-</section>
+        </a>
+    </section>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
