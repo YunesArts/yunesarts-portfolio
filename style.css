@@ -411,10 +411,9 @@ h1 {
 
 /* ===== CONTACT PAGE ===== */
 .contact-page {
-    max-width: 800px;
+    max-width: 900px;
     margin: 150px auto 80px;
     padding: 0 40px;
-    text-align: center;
 }
 
 .contact-page h1 {
@@ -422,7 +421,8 @@ h1 {
     font-size: 50px;
     font-weight: 300;
     letter-spacing: 3px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .contact-content > p {
@@ -430,39 +430,59 @@ h1 {
     line-height: 1.8;
     color: #666;
     margin-bottom: 60px;
+    text-align: center;
 }
 
-.contact-links {
+.contact-sections {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    gap: 60px;
 }
 
-.contact-item {
-    padding: 30px;
+.contact-group {
+    padding: 20px;
     background: #f9f9f9;
-    text-decoration: none;
-    color: inherit;
-    transition: background 0.3s;
-    text-align: left;
+    border-left: 3px solid #e0e0e0;
 }
 
-.contact-item:hover {
-    background: #f0f0f0;
+.contact-group h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
-.contact-item h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-}
-
-.contact-item p {
-    font-size: 14px;
+.contact-link {
+    display: block;
+    font-size: 15px;
     color: #666;
-    margin: 0;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.contact-link:hover {
+    color: #1a1a1a;
+}
+
+.contact-link .platform {
+    font-weight: 500;
+    color: #1a1a1a;
+    display: block;
+}
+
+.contact-link .account {
+    font-size: 14px;
+    color: #999;
+    display: block;
+}
+
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* ===== MOBILE MENU TOGGLE (Hamburger) ===== */
@@ -689,13 +709,17 @@ h1 {
         font-size: 15px;
     }
     
-    .contact-links {
+    .contact-sections {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 40px;
     }
     
-    .contact-item h3 {
-        font-size: 16px;
+    .contact-group h2 {
+        font-size: 20px;
+    }
+    
+    .contact-link {
+        font-size: 14px;
     }
     
     /* Category Grid Vertical */
@@ -708,4 +732,29 @@ h1 {
         font-size: 24px;
         letter-spacing: 2px;
     }
+
+    /* Footer */
+    footer {
+        padding: 15px 20px;
+        margin-top: 60px;
+    }
+    
+    footer p {
+        font-size: 10px;
+    }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #2e2e2e;
+    padding: 10px 40px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+footer p {
+    color: #999;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0;
 }
