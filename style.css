@@ -592,10 +592,29 @@ h1 {
 
 .contact-group h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
+    font-size: 28px;  /* War: 24px */
     font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 20px;
+}
+
+.contact-intro {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.contact-email {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+    display: block;
+    margin-top: 10px;
+}
+
+.contact-email:hover {
+    color: #666;
 }
 
 .contact-link {

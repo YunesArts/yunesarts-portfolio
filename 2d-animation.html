@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Animation - Yunes Arts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>Yunes Arts</span>
+            </a>
+            
+            <div class="nav-menu">
+                <div class="dropdown">
+                    <a href="3d-modeling.html">3D Modeling</a>
+                    <div class="dropdown-content">
+                        <a href="3d-characters.html">Characters</a>
+                        <a href="3d-props.html">Props</a>
+                        <a href="3d-environment.html">Environment</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <a href="illustration.html">Illustration</a>
+                    <div class="dropdown-content">
+                        <a href="concept-art.html">Concept Art</a>
+                        <a href="character-design.html">Character Design</a>
+                    </div>
+                </div>
+                
+                <a href="animation.html">Animation</a>
+                
+                <div class="dropdown">
+                    <a href="projects.html">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="project-1.html">Project 1</a>
+                        <a href="project-2.html">Project 2</a>
+                        <a href="project-3.html">Project 3</a>
+                    </div>
+                </div>
+                
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+<button class="mobile-menu-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<script>
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    });
+</script>
+
+    <section class="page-header">
+        <h1>2D Animation</h1>
+        <p>Motion graphics, frame-by-frame animation, and animated illustrations</p>
+    </section>
+
+    <section class="gallery-grid-vertical">
+    <article class="gallery-item-vertical">
+        <div class="gallery-image-vertical">
+            <div class="placeholder-gallery">ANIMATION 1</div>
+        </div>
+        <h3>Animation Title</h3>
+        <p>Brief description • Tools</p>
+    </article>
+
+    <article class="gallery-item-vertical">
+        <div class="gallery-image-vertical">
+            <div class="placeholder-gallery">ANIMATION 2</div>
+        </div>
+        <h3>Animation Title</h3>
+        <p>Brief description • Tools</p>
+    </article>
+
+    <article class="gallery-item-vertical">
+        <div class="gallery-image-vertical">
+            <div class="placeholder-gallery">ANIMATION 3</div>
+        </div>
+        <h3>Animation Title</h3>
+        <p>Brief description • Tools</p>
+    </article>
+</section>
+
+</body>
+</html>
