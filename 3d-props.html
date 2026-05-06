@@ -69,15 +69,25 @@
 
     <!-- Gallery Grid -->
     <section class="gallery-grid">
-        <article class="gallery-item">
+        <article class="gallery-item tall" 
+                 data-img="images/radio.jpg" 
+                 data-title="Vintage Radio"
+                 data-desc="Game-ready prop created in 3ds Max and textured in Substance Painter. Features detailed wear and aging for a realistic vintage aesthetic."
+                 data-polycount="2,500 tris"
+                 data-tools="3ds Max, Substance Painter, Unity">
             <div class="gallery-image">
-                <div class="placeholder-gallery">PROJECT 1</div>
+                <div class="placeholder-gallery">RADIO</div>
             </div>
             <h3>Vintage Radio</h3>
             <p>Game-ready prop • 3ds Max, Substance Painter • 2.5k tris</p>
         </article>
 
-        <article class="gallery-item">
+        <article class="gallery-item medium" 
+                 data-img="images/prop2.jpg" 
+                 data-title="Project Title"
+                 data-desc="Brief description of the project."
+                 data-polycount="1,800 tris"
+                 data-tools="3ds Max, Substance Painter">
             <div class="gallery-image">
                 <div class="placeholder-gallery">PROJECT 2</div>
             </div>
@@ -85,15 +95,21 @@
             <p>Brief description • Tools • Polycount</p>
         </article>
 
-        <article class="gallery-item">
+        <article class="gallery-item short" 
+                 data-img="images/prop3.jpg" 
+                 data-title="Another Prop"
+                 data-desc="Description here.">
             <div class="gallery-image">
                 <div class="placeholder-gallery">PROJECT 3</div>
             </div>
-            <h3>Project Title</h3>
+            <h3>Another Prop</h3>
             <p>Brief description • Tools • Polycount</p>
         </article>
 
-        <article class="gallery-item">
+        <article class="gallery-item tall" 
+                 data-img="images/prop4.jpg" 
+                 data-title="Project Title"
+                 data-desc="Description.">
             <div class="gallery-image">
                 <div class="placeholder-gallery">PROJECT 4</div>
             </div>
@@ -101,6 +117,19 @@
             <p>Brief description • Tools</p>
         </article>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <div class="lightbox-content">
+            <div class="lightbox-image">
+                <img src="" alt="Gallery Image" id="lightbox-img">
+            </div>
+            <div class="lightbox-info" id="lightbox-info">
+                <!-- Info wird per JS gefüllt -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -122,6 +151,57 @@
                 navMenu.classList.remove('active');
                 menuToggle.classList.remove('active');
             });
+        });
+    </script>
+
+    <!-- Lightbox Script -->
+    <script>
+        // Lightbox Functionality with Info Panel
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxInfo = document.getElementById('lightbox-info');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const closeBtn = document.querySelector('.lightbox-close');
+
+        // Open lightbox on gallery item click
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.getAttribute('data-img');
+                const title = item.getAttribute('data-title');
+                const desc = item.getAttribute('data-desc');
+                const polycount = item.getAttribute('data-polycount');
+                const tools = item.getAttribute('data-tools');
+                
+                lightboxImg.src = imgSrc;
+                
+                // Build info content
+                let infoHTML = `<h3>${title}</h3>`;
+                if (desc) infoHTML += `<p>${desc}</p>`;
+                if (polycount) infoHTML += `<p><span class="info-label">Polycount:</span><br>${polycount}</p>`;
+                if (tools) infoHTML += `<p><span class="info-label">Tools:</span><br>${tools}</p>`;
+                
+                lightboxInfo.innerHTML = infoHTML;
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Close lightbox on close button
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+            }
         });
     </script>
 

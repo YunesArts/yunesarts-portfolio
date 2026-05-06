@@ -69,7 +69,11 @@
 
     <!-- Gallery Grid -->
     <section class="gallery-grid">
-        <article class="gallery-item">
+        <article class="gallery-item tall" 
+                 data-img="images/chardesign1.jpg" 
+                 data-title="Character Name"
+                 data-desc="Brief description of the character design."
+                 data-tools="Photoshop, Procreate">
             <div class="gallery-image">
                 <div class="placeholder-gallery">CHARACTER 1</div>
             </div>
@@ -77,7 +81,10 @@
             <p>Brief description • 2D illustration</p>
         </article>
 
-        <article class="gallery-item">
+        <article class="gallery-item medium" 
+                 data-img="images/chardesign2.jpg" 
+                 data-title="Character Name"
+                 data-desc="Brief description.">
             <div class="gallery-image">
                 <div class="placeholder-gallery">CHARACTER 2</div>
             </div>
@@ -85,7 +92,10 @@
             <p>Brief description • Digital art</p>
         </article>
 
-        <article class="gallery-item">
+        <article class="gallery-item short" 
+                 data-img="images/chardesign3.jpg" 
+                 data-title="Character Name"
+                 data-desc="Brief description.">
             <div class="gallery-image">
                 <div class="placeholder-gallery">CHARACTER 3</div>
             </div>
@@ -93,6 +103,19 @@
             <p>Brief description • Tools</p>
         </article>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <div class="lightbox-content">
+            <div class="lightbox-image">
+                <img src="" alt="Gallery Image" id="lightbox-img">
+            </div>
+            <div class="lightbox-info" id="lightbox-info">
+                <!-- Info wird per JS gefüllt -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -114,6 +137,51 @@
                 navMenu.classList.remove('active');
                 menuToggle.classList.remove('active');
             });
+        });
+    </script>
+
+    <!-- Lightbox Script -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxInfo = document.getElementById('lightbox-info');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const closeBtn = document.querySelector('.lightbox-close');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.getAttribute('data-img');
+                const title = item.getAttribute('data-title');
+                const desc = item.getAttribute('data-desc');
+                const polycount = item.getAttribute('data-polycount');
+                const tools = item.getAttribute('data-tools');
+                
+                lightboxImg.src = imgSrc;
+                
+                let infoHTML = `<h3>${title}</h3>`;
+                if (desc) infoHTML += `<p>${desc}</p>`;
+                if (polycount) infoHTML += `<p><span class="info-label">Polycount:</span><br>${polycount}</p>`;
+                if (tools) infoHTML += `<p><span class="info-label">Tools:</span><br>${tools}</p>`;
+                
+                lightboxInfo.innerHTML = infoHTML;
+                lightbox.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+            }
         });
     </script>
 
