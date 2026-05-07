@@ -160,7 +160,15 @@ main {
     font-size: 14px;
     letter-spacing: 2px;
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+}
+
+.name-line {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #999;
+    font-weight: 300;
+    margin-top: 10px;
 }
 
 h1 {
@@ -168,7 +176,7 @@ h1 {
     font-size: 48px;
     font-weight: 300;
     letter-spacing: 4px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /* ===== HERO IMAGE ===== */
@@ -178,6 +186,13 @@ h1 {
     padding: 0 20px;
 }
 
+.hero-image-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    overflow: hidden;
+}
+
 .hero-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
@@ -185,6 +200,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.4s ease;
+    overflow: hidden;
+}
+
+.hero-image-link:hover .hero-placeholder {
+    transform: scale(1.05);
 }
 
 .hero-placeholder span {
@@ -192,6 +213,8 @@ h1 {
     color: #999;
     letter-spacing: 4px;
 }
+
+
 
 /* ===== WELCOME TEXT SECTION ===== */
 .welcome-text {
@@ -592,29 +615,10 @@ h1 {
 
 .contact-group h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;  /* War: 24px */
+    font-size: 28px;
     font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 20px;
-}
-
-.contact-intro {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.contact-email {
-    font-size: 16px;
-    font-weight: 500;
-    color: #1a1a1a;
-    display: block;
-    margin-top: 10px;
-}
-
-.contact-email:hover {
-    color: #666;
 }
 
 .contact-link {
@@ -778,11 +782,29 @@ footer p {
         font-size: 12px;
     }
     
+    .name-line {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    
     h1 {
         font-size: 36px;
         letter-spacing: 2px;
         margin-bottom: 20px;
     }
+    
+    /* Hero Image */
+    .hero-image {
+        padding: 0 20px;
+        margin: 15px auto 30px;
+    }
+    
+    .hero-placeholder span {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+    
+    
     
     /* Welcome Text */
     .welcome-text {
@@ -797,17 +819,6 @@ footer p {
     .welcome-text p {
         font-size: 15px;
         line-height: 1.7;
-    }
-    
-    /* Hero Image */
-    .hero-image {
-        padding: 0 20px;
-        margin: 15px auto 30px;
-    }
-    
-    .hero-placeholder span {
-        font-size: 16px;
-        letter-spacing: 3px;
     }
     
     /* Kategorie-Karten */
